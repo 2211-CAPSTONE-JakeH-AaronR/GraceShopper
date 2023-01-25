@@ -1,3 +1,4 @@
+const { useResolvedPath } = require('react-router-dom');
 const {
   client,
   // declare your model imports here
@@ -110,6 +111,13 @@ async function populateInitialData() {
     // create useful starting data by leveraging your
     // Model.method() adapters to seed your db, for example:
     // const user1 = await User.createUser({ ...user info goes here... })
+    const user1 = await `${Users}`.createUser({
+      CustomerId: 2000,
+      Password: 12345678,
+      Email: 'hopperjake@icloud.com',
+      Address1: '245 Cherry Lane',
+      Name: Jake
+    })
   } catch (error) {
     throw error;
   }
